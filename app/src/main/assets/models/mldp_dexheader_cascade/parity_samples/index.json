@@ -1,0 +1,136 @@
+{
+  "num_samples": 10,
+  "seed": 42,
+  "samples": [
+    {
+      "sample_id": "sample_000",
+      "index": 65,
+      "label": 0,
+      "mode_a_malware_prob": 0.013970054686069489,
+      "stage1_prob": 0.10084003210067749,
+      "stage2_prob": 0.002313941717147827,
+      "dims": {
+        "S": 22,
+        "H": 104,
+        "d": 126
+      }
+    },
+    {
+      "sample_id": "sample_001",
+      "index": 585,
+      "label": 0,
+      "mode_a_malware_prob": 0.01851956732571125,
+      "stage1_prob": 0.05886175483465195,
+      "stage2_prob": 0.111784428358078,
+      "dims": {
+        "S": 22,
+        "H": 104,
+        "d": 126
+      }
+    },
+    {
+      "sample_id": "sample_002",
+      "index": 67,
+      "label": 0,
+      "mode_a_malware_prob": 0.018204012885689735,
+      "stage1_prob": 0.11767055839300156,
+      "stage2_prob": 0.001192539930343628,
+      "dims": {
+        "S": 22,
+        "H": 104,
+        "d": 126
+      }
+    },
+    {
+      "sample_id": "sample_003",
+      "index": 495,
+      "label": 0,
+      "mode_a_malware_prob": 0.020945003256201744,
+      "stage1_prob": 0.11767055839300156,
+      "stage2_prob": 0.0007537007331848145,
+      "dims": {
+        "S": 22,
+        "H": 104,
+        "d": 126
+      }
+    },
+    {
+      "sample_id": "sample_004",
+      "index": 332,
+      "label": 1,
+      "mode_a_malware_prob": 0.9444588422775269,
+      "stage1_prob": 0.9164924621582031,
+      "stage2_prob": 0.012598305940628052,
+      "dims": {
+        "S": 22,
+        "H": 104,
+        "d": 126
+      }
+    },
+    {
+      "sample_id": "sample_005",
+      "index": 328,
+      "label": 0,
+      "mode_a_malware_prob": 0.01993253268301487,
+      "stage1_prob": 0.15456464886665344,
+      "stage2_prob": 0.0015725493431091309,
+      "dims": {
+        "S": 22,
+        "H": 104,
+        "d": 126
+      }
+    },
+    {
+      "sample_id": "sample_006",
+      "index": 531,
+      "label": 0,
+      "mode_a_malware_prob": 0.2534092664718628,
+      "stage1_prob": 0.6169571280479431,
+      "stage2_prob": 0.004591643810272217,
+      "dims": {
+        "S": 22,
+        "H": 104,
+        "d": 126
+      }
+    },
+    {
+      "sample_id": "sample_007",
+      "index": 71,
+      "label": 0,
+      "mode_a_malware_prob": 0.015244283713400364,
+      "stage1_prob": 0.34557777643203735,
+      "stage2_prob": 0.0004990994930267334,
+      "dims": {
+        "S": 22,
+        "H": 104,
+        "d": 126
+      }
+    },
+    {
+      "sample_id": "sample_008",
+      "index": 153,
+      "label": 1,
+      "mode_a_malware_prob": 0.9992327690124512,
+      "stage1_prob": 0.8819549083709717,
+      "stage2_prob": 0.9998724460601807,
+      "dims": {
+        "S": 22,
+        "H": 104,
+        "d": 126
+      }
+    },
+    {
+      "sample_id": "sample_009",
+      "index": 652,
+      "label": 1,
+      "mode_a_malware_prob": 0.9972848892211914,
+      "stage1_prob": 0.9791252017021179,
+      "stage2_prob": 0.9997043013572693,
+      "dims": {
+        "S": 22,
+        "H": 104,
+        "d": 126
+      }
+    }
+  ]
+}

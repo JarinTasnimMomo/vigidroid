@@ -1,0 +1,19 @@
+{
+  "model_id": "mlp_header",
+  "default": 0.5,
+  "tuned_val": 0.75,
+  "malware_threshold": 0.75,
+  "cascade_targets": {
+    "target_false_omission_rate": 0.02,
+    "target_false_alarm_at_thigh": 0.02
+  },
+  "cascade": {
+    "t_low": 0.020269112661480904,
+    "t_high": 0.5593604445457458,
+    "val_false_omission_rate_at_t_low": 0.016736401673640166,
+    "val_false_alarm_rate_at_t_high": 0.01904761904761905,
+    "val_step1_exit_rate": 0.7643979057591623
+  },
+  "description": "Predict malware when malware_probability >= tuned_val",
+  "benign_threshold": 0.25
+}

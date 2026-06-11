@@ -1,0 +1,18 @@
+{
+  "model_id": "mldp_dexheader_cascade",
+  "mode_a": {
+    "default": 0.5,
+    "tuned_val": 0.5499999999999999
+  },
+  "mode_b": {
+    "stage1_t_low": 0.0524773895740509,
+    "stage1_t_high": 0.7668870091438293,
+    "val_false_omission_rate_at_t_low": 0.016736401673640166,
+    "val_false_alarm_rate_at_t_high": 0.01904761904761905,
+    "val_step1_exit_rate": 0.26178010471204194
+  },
+  "cascade_targets": {
+    "target_false_omission_rate": 0.02,
+    "target_false_alarm_at_thigh": 0.02
+  }
+}

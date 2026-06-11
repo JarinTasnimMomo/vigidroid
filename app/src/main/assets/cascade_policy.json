@@ -1,0 +1,171 @@
+{
+  "policy_name": "cascade_v1",
+  "enabled": true,
+  "tier3_pattern_model": "early_fusion_dex_manifest",
+  "tiers": [
+    {
+      "tier": 1,
+      "aggregation": "weighted_avg",
+      "conservative_malware_or": true,
+      "models": [
+        "mldp_pruned_permission",
+        "broadcast_mldp_hybrid"
+      ],
+      "t_low": 0.05356506468145629,
+      "t_high": 0.44486265303422057
+    },
+    {
+      "tier": 2,
+      "mlp_header_fallback": true,
+      "models": [
+        "mldp_dexheader_cascade_mode_b"
+      ],
+      "t_low": 0.0524773895740509,
+      "t_high": 0.7668870091438293
+    },
+    {
+      "tier": 3,
+      "models": [
+        "early_fusion_dex_manifest",
+        "manifest_xgb"
+      ],
+      "t_low": 0.015309738926589489,
+      "t_high": 0.3739590644836426
+    },
+    {
+      "tier": 4,
+      "final": true,
+      "models": [
+        "bytecnn"
+      ],
+      "t_low": 0.4,
+      "t_high": 0.6
+    }
+  ],
+  "model_weights": {
+    "broadcast_mldp_hybrid": 0.8898678414096917,
+    "bytecnn": 0.9607843,
+    "manifest_xgb": 0.9748,
+    "mldp_dexheader_cascade_mode_b": 0.8609865470852018,
+    "mldp_pruned_permission": 0.9036402569593148,
+    "early_fusion_dex_manifest": 0.95
+  },
+  "fusion_weights": {
+    "bytecnn": 0.9607843,
+    "manifest_xgb": 0.9748,
+    "early_fusion_dex_manifest": 0.95
+  },
+  "calibration": {
+    "n_aligned_apks": 764,
+    "alignment_key": "sha256",
+    "alignment_warnings": [
+      "Tier 4: no val scores for ['bytecnn']; using placeholder bands"
+    ],
+    "targets": {
+      "target_false_omission_rate": 0.02,
+      "target_false_alarm_at_thigh": 0.02
+    },
+    "tiers": [
+      {
+        "tier": 1,
+        "models": [
+          "mldp_pruned_permission",
+          "broadcast_mldp_hybrid"
+        ],
+        "source": "calibrated",
+        "n_aligned_apks": 764,
+        "weights": {
+          "mldp_pruned_permission": 0.9036402569593148,
+          "broadcast_mldp_hybrid": 0.8898678414096917
+        },
+        "t_low": 0.05356506468145629,
+        "t_high": 0.44486265303422057,
+        "val_false_omission_rate_at_t_low": 0.016736401673640166,
+        "val_false_alarm_rate_at_t_high": 0.017142857142857144,
+        "val_step1_exit_rate": 0.3992146596858639,
+        "tier_f1": 0.8853932584269663
+      },
+      {
+        "tier": 2,
+        "models": [
+          "mldp_dexheader_cascade_mode_b"
+        ],
+        "source": "reused_thresholds",
+        "n_aligned_apks": 764,
+        "weights": {
+          "mldp_dexheader_cascade_mode_b": 0.8609865470852018
+        },
+        "t_low": 0.0524773895740509,
+        "t_high": 0.7668870091438293,
+        "val_false_omission_rate_at_t_low": 0.016736401673640166,
+        "val_false_alarm_rate_at_t_high": 0.01904761904761905,
+        "val_step1_exit_rate": 0.26178010471204194
+      },
+      {
+        "tier": 3,
+        "models": [
+          "early_fusion_dex_manifest",
+          "manifest_xgb"
+        ],
+        "source": "calibrated_single_model",
+        "n_aligned_apks": 764,
+        "weights": {
+          "early_fusion_dex_manifest": 0.95,
+          "manifest_xgb": 0.9748
+        },
+        "t_low": 0.015309738926589489,
+        "t_high": 0.3739590644836426,
+        "val_false_omission_rate_at_t_low": 0.016736401673640166,
+        "val_false_alarm_rate_at_t_high": 0.01904761904761905,
+        "val_step1_exit_rate": 0.7657068062827225,
+        "tier_f1": 0.9426751592356688
+      },
+      {
+        "tier": 4,
+        "models": [
+          "bytecnn"
+        ],
+        "source": "placeholder_no_val_scores",
+        "n_aligned_apks": 0,
+        "weights": {
+          "bytecnn": 0.9607843
+        },
+        "t_low": 0.4,
+        "t_high": 0.6,
+        "val_false_omission_rate_at_t_low": 0.0,
+        "val_false_alarm_rate_at_t_high": 0.0,
+        "val_step1_exit_rate": 0.0,
+        "note": "Placeholder uncertain band until bytecnn val_scores calibrated"
+      }
+    ],
+    "cumulative_exit": [
+      {
+        "tier": 1,
+        "n_active": 764,
+        "n_exit": 305,
+        "tier_exit_rate": 0.3992146596858639,
+        "cumulative_exit_rate": 0.3992146596858639,
+        "t_low": 0.05356506468145629,
+        "t_high": 0.44486265303422057
+      },
+      {
+        "tier": 2,
+        "n_active": 459,
+        "n_exit": 5,
+        "tier_exit_rate": 0.010893246187363835,
+        "cumulative_exit_rate": 0.40575916230366493,
+        "t_low": 0.0524773895740509,
+        "t_high": 0.7668870091438293
+      },
+      {
+        "tier": 3,
+        "n_active": 454,
+        "n_exit": 302,
+        "tier_exit_rate": 0.6651982378854625,
+        "cumulative_exit_rate": 0.8010471204188482,
+        "t_low": 0.015309738926589489,
+        "t_high": 0.3739590644836426
+      }
+    ]
+  }
+}

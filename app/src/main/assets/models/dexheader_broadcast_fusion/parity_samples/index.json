@@ -1,0 +1,42 @@
+[
+  {
+    "dir": "sample_000",
+    "sha256": "2bdb8fd08770297f94e29a8200567423844a227f186ccf99fb8b59152b65f52d"
+  },
+  {
+    "dir": "sample_001",
+    "sha256": "aeb81687af482efd569786b47877b62aee8245fd40c562341cced553135e3226"
+  },
+  {
+    "dir": "sample_002",
+    "sha256": "aaee33f7c56639c892c9e07e178ef68dd8fc7292012279a6378c22a8da5fad59"
+  },
+  {
+    "dir": "sample_003",
+    "sha256": "7d5d6edde48290a58d4a5857ebbe1d9f3e88d2982a68cdf71e5b564bfd9b7777"
+  },
+  {
+    "dir": "sample_004",
+    "sha256": "d822f1c5816a741fd88d567f4c63d3e60d5818fe796d5906d27b43bf822a07bb"
+  },
+  {
+    "dir": "sample_005",
+    "sha256": "20fc28a49e2b6ccbbb2ea6df3d525f63e4261833b61cec4ee134793778516f04"
+  },
+  {
+    "dir": "sample_006",
+    "sha256": "cf75a20412eec82fa6469106eb126ec98972e624f08a4bb0a2fe8277ff29b9ff"
+  },
+  {
+    "dir": "sample_007",
+    "sha256": "c51c484af51ec4ce6a1725bfa67273b2b56b3996d4641211188ada2faf399489"
+  },
+  {
+    "dir": "sample_008",
+    "sha256": "8e618e6b373c33bf678ca409571c78c0e352cad5ba49e6247349fe42740f2164"
+  },
+  {
+    "dir": "sample_009",
+    "sha256": "7fb6f41fb9f4d34f35b232fb1f943e342906122261aa449e3c199aaf474c5f04"
+  }
+]

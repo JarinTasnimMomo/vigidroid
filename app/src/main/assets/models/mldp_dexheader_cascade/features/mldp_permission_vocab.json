@@ -1,0 +1,27 @@
+{
+  "tokens": [
+    "permissions::internet",
+    "permissions::access_network_state",
+    "permissions::write_external_storage",
+    "permissions::access_wifi_state",
+    "permissions::read_external_storage",
+    "permissions::wake_lock",
+    "permissions::vibrate",
+    "permissions::read_phone_state",
+    "permissions::receive_boot_completed",
+    "permissions::access_fine_location",
+    "permissions::access_coarse_location",
+    "permissions::foreground_service",
+    "permissions::change_wifi_state",
+    "permissions::com_google_android_finsky_permission_bind_get_install_referrer_service",
+    "permissions::system_alert_window",
+    "permissions::camera",
+    "permissions::com_google_android_c2dm_permission_receive",
+    "permissions::request_install_packages",
+    "permissions::get_tasks",
+    "permissions::call_phone",
+    "permissions::read_contacts",
+    "permissions::record_audio"
+  ],
+  "size": 22
+}

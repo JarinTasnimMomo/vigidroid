@@ -1,0 +1,58 @@
+{
+  "model_id": "broadcast_mldp_hybrid",
+  "domain": "manifest_mldp_perm_receiver_actions",
+  "exported_at": "2026-06-08T10:06:17.547699+00:00",
+  "opset": 14,
+  "checkpoint": "/mnt/Files/thesis_vigidroid/broadcast_mldp_hybrid/artifacts/checkpoints/best.pt",
+  "config_hash": "9df0ad41e6c105fe",
+  "preprocessing_version": "eb44039",
+  "multidex_mode": "n/a",
+  "feature_extraction": {
+    "apk_part": "AndroidManifest.xml",
+    "fusion": "early_concat",
+    "blocks": [
+      "mldp_perms",
+      "receiver_system_actions"
+    ],
+    "mldp_size_S": 22,
+    "receiver_size_R": 70,
+    "receiver_system_actions_only": true
+  },
+  "inputs": [
+    {
+      "name": "features",
+      "shape": [
+        1,
+        92
+      ],
+      "dtype": "float32",
+      "description": "Early-fused [x_S || x_R] binary vector, float32 0/1"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "malware_prob",
+      "shape": [
+        1,
+        1
+      ],
+      "dtype": "float32",
+      "description": "Malware probability in [0, 1] (sigmoid in ONNX graph)"
+    }
+  ],
+  "onnx_file": "model.onnx",
+  "android_assets_target": "vigidroid/app/src/main/assets/models/broadcast_mldp_hybrid/",
+  "onnx_runtime_check": {
+    "input_name": "features",
+    "output_name": "malware_prob",
+    "test_output_shape": [
+      1,
+      1
+    ],
+    "test_output_value": 0.11681219935417175,
+    "onnx_size_bytes": 24741,
+    "onnx_size_kb": 24.16
+  },
+  "val_f1": 0.8898678414096917,
+  "val_accuracy": 0.9345549738219895
+}

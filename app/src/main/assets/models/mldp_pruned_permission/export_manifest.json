@@ -1,0 +1,55 @@
+{
+  "model_id": "mldp_pruned_permission",
+  "domain": "manifest_permissions_mldp",
+  "exported_at": "2026-06-08T09:59:14.166966+00:00",
+  "opset_version": 14,
+  "preprocessing_version": "1",
+  "multidex_mode": "n/a",
+  "split_mode": "temporal_holdout",
+  "train_years": [
+    2020,
+    2021
+  ],
+  "holdout_years": [
+    2022,
+    2023
+  ],
+  "primary_test_split": "test",
+  "feature_dim": 40,
+  "model_type": "tiny_mlp",
+  "token_normalization": "vigidroid",
+  "feature_asset": "features/selected_permissions.json",
+  "mldp": {
+    "frozen_set_s": 40,
+    "association_rule_mode": "malware_only_itemsets",
+    "association_rule_note": "Pairwise association rules on malware-only transactions; permissions from high-confidence rules among PRNR/support candidates (implicit malware consequent).",
+    "fallback_used": false,
+    "full_permission_ablation": "not_implemented"
+  },
+  "inputs": [
+    {
+      "name": "permissions",
+      "shape": [
+        1,
+        40
+      ],
+      "dtype": "float32",
+      "description": "Binary vector aligned with features/selected_permissions.json (frozen set S)"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "malware_probability",
+      "shape": [
+        1,
+        1
+      ],
+      "dtype": "float32",
+      "description": "Sigmoid-calibrated malware probability in [0, 1]"
+    }
+  ],
+  "onnx_file": "model.onnx",
+  "android_assets_target": "vigidroid/app/src/main/assets/models/mldp_pruned_permission/",
+  "val_f1": 0.9036402569593148,
+  "val_accuracy": 0.9410994764397905
+}

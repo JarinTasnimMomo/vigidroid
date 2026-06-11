@@ -1,0 +1,45 @@
+{
+  "scan_id": "ff9ac88f-2cb7-459b-be62-356200dea7fa",
+  "timestamp_ms": 1780361570389,
+  "device": {
+    "model": "sdk_gphone64_arm64",
+    "manufacturer": "Google",
+    "api": 36
+  },
+  "apk": {
+    "name": "004B759969C2BE8D6100099779B0011765446E4FE645DF234F84F4FBB0FDAF97.apk",
+    "path": "\/storage\/emulated\/0\/Download\/004B759969C2BE8D6100099779B0011765446E4FE645DF234F84F4FBB0FDAF97.apk",
+    "size_bytes": 6680295,
+    "sha256_short": "33d0590a"
+  },
+  "trigger": "manual",
+  "stages": [
+    {
+      "domain": "manifest_xgb",
+      "parse_ms": 237.631042,
+      "vectorize_ms": 9.090542,
+      "inference_ms": 11.764208,
+      "score": 0,
+      "mem_delta_bytes": 601000
+    },
+    {
+      "domain": "bytecnn",
+      "parse_ms": 1.042875,
+      "vectorize_ms": 0,
+      "inference_ms": 5.814083,
+      "score": 0.2778056561946869,
+      "mem_delta_bytes": 601000
+    }
+  ],
+  "ensemble": {
+    "score": 0.13890283,
+    "decision": "benign",
+    "policy": "sequential_mean"
+  },
+  "totals": {
+    "wall_ms": 265.407667,
+    "cpu_ms": 218.784091,
+    "mem_delta_bytes": 1202000,
+    "battery_pct_delta": null
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "model_id": "mldp_pruned_permission",
+  "default": 0.5,
+  "tuned_val": 0.1,
+  "malware_threshold": 0.1,
+  "cascade_targets": {
+    "target_false_omission_rate": 0.02,
+    "target_false_alarm_at_thigh": 0.02
+  },
+  "cascade": {
+    "t_low": 0.011009245179593563,
+    "t_high": 0.71808922290802,
+    "val_false_omission_rate_at_t_low": 0.016736401673640166,
+    "val_false_alarm_rate_at_t_high": 0.015238095238095238,
+    "val_step1_exit_rate": 0.274869109947644
+  },
+  "model_type": "tiny_mlp",
+  "description": "Predict malware when malware_probability >= tuned_val (val-tuned tiny_mlp)"
+}

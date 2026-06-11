@@ -1,0 +1,11 @@
+{
+  "order": [
+    "dex_header",
+    "receiver_actions"
+  ],
+  "dex_header": 104,
+  "receiver": 70,
+  "receiver_embed_dim": 32,
+  "fused_embed": 160,
+  "header_hidden": 128
+}

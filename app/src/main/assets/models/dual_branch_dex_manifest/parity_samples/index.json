@@ -1,0 +1,70 @@
+{
+  "num_samples": 8,
+  "seed": 42,
+  "samples": [
+    {
+      "sample_id": "sample_000",
+      "index": 1031,
+      "label": 0,
+      "expected_malware_probability": 1.0406811270513572e-05,
+      "header_dim": 104,
+      "bow_dim": 4381
+    },
+    {
+      "sample_id": "sample_001",
+      "index": 8367,
+      "label": 0,
+      "expected_malware_probability": 0.012529831379652023,
+      "header_dim": 104,
+      "bow_dim": 4381
+    },
+    {
+      "sample_id": "sample_002",
+      "index": 10300,
+      "label": 0,
+      "expected_malware_probability": 0.001129225129261613,
+      "header_dim": 104,
+      "bow_dim": 4381
+    },
+    {
+      "sample_id": "sample_003",
+      "index": 7850,
+      "label": 0,
+      "expected_malware_probability": 0.006523939780890942,
+      "header_dim": 104,
+      "bow_dim": 4381
+    },
+    {
+      "sample_id": "sample_004",
+      "index": 5194,
+      "label": 0,
+      "expected_malware_probability": 0.07508841156959534,
+      "header_dim": 104,
+      "bow_dim": 4381
+    },
+    {
+      "sample_id": "sample_005",
+      "index": 5264,
+      "label": 1,
+      "expected_malware_probability": 0.9841896891593933,
+      "header_dim": 104,
+      "bow_dim": 4381
+    },
+    {
+      "sample_id": "sample_006",
+      "index": 1070,
+      "label": 0,
+      "expected_malware_probability": 0.0003449798095971346,
+      "header_dim": 104,
+      "bow_dim": 4381
+    },
+    {
+      "sample_id": "sample_007",
+      "index": 9282,
+      "label": 0,
+      "expected_malware_probability": 0.000161144562298432,
+      "header_dim": 104,
+      "bow_dim": 4381
+    }
+  ]
+}

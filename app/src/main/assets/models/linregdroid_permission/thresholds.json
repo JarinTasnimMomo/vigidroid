@@ -1,0 +1,20 @@
+{
+  "model_id": "linregdroid_permission",
+  "default": 0.5,
+  "tuned_val": 0.25,
+  "malware_threshold": 0.25,
+  "cascade_targets": {
+    "target_false_omission_rate": 0.02,
+    "target_false_alarm_at_thigh": 0.02
+  },
+  "cascade": {
+    "t_low": 0.0,
+    "t_high": 0.4459032714366913,
+    "val_false_omission_rate_at_t_low": 0.04602510460251046,
+    "val_false_alarm_rate_at_t_high": 0.015238095238095238,
+    "val_step1_exit_rate": 0.32198952879581155
+  },
+  "decision_variant": "linregdroid1",
+  "threshold_variant": "linregdroid1",
+  "note": "tuned_val applies to LinRegDroid1 (clamped score); LinRegDroid2 ignores tuned_val (nearest-class rule)."
+}

@@ -1,0 +1,48 @@
+# VigiDroid .gitignore
+
+# Android / Gradle build outputs
+**/build/
+.gradle/
+captures/
+output.json
+
+# Local machine settings
+local.properties
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+*.ipr
+*.iws
+.navigation/
+GradleTaskRequests.txt
+
+# Kotlin/Java temporary files
+*.class
+
+# Python environments and caches (for ML scripts in repo)
+.venv/
+venv/
+env/
+ENV/
+pyvenv.cfg
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Common data artifacts
+*.npz
+
+# Logs and temp files
+*.log
+*.tmp
+*.temp
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*~

@@ -1,0 +1,60 @@
+{
+  "model_id": "mldp_dexheader_cascade",
+  "mode": "A",
+  "domain": "manifest_mldp_perm_dex_header",
+  "exported_at": "2026-06-08T10:20:59.639250+00:00",
+  "opset": 14,
+  "checkpoint": "/mnt/Files/thesis_vigidroid/mldp_dexheader_cascade/artifacts/checkpoints/mode_a_best.pt",
+  "config_hash": "726526be1c144fcf",
+  "preprocessing_version": "eb44039",
+  "multidex_mode": "sum",
+  "feature_extraction": {
+    "apk_parts": [
+      "AndroidManifest.xml",
+      "classes*.dex(header)"
+    ],
+    "fusion": "early_concat",
+    "blocks": [
+      "mldp_perms",
+      "dex_header_104"
+    ],
+    "mldp_size_S": 22,
+    "dex_feature_dim": 104,
+    "dex_normalization": "per_byte_div255 -> multidex_sum -> corpus_minmax"
+  },
+  "inputs": [
+    {
+      "name": "features",
+      "shape": [
+        1,
+        126
+      ],
+      "dtype": "float32",
+      "description": "Early-fused [x_S || H], float32"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "malware_prob",
+      "shape": [
+        1,
+        1
+      ],
+      "dtype": "float32",
+      "description": "Malware probability in [0, 1] (sigmoid in ONNX graph)"
+    }
+  ],
+  "onnx_file": "model.onnx",
+  "android_assets_target": "vigidroid/app/src/main/assets/models/mldp_dexheader_cascade/",
+  "onnx_runtime_check": {
+    "input_name": "features",
+    "output_name": "malware_prob",
+    "test_output_shape": [
+      1,
+      1
+    ],
+    "test_output_value": 0.11076447367668152,
+    "onnx_size_bytes": 33445,
+    "onnx_size_kb": 32.66
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "model_id": "linregdroid_permission",
+  "domain": "manifest_permissions",
+  "exported_at": "2026-06-08T10:03:08.672910+00:00",
+  "opset_version": 14,
+  "preprocessing_version": "1",
+  "multidex_mode": "n/a",
+  "split_mode": "temporal_holdout",
+  "train_years": [
+    2020,
+    2021
+  ],
+  "holdout_years": [
+    2022,
+    2023
+  ],
+  "primary_test_split": "test",
+  "feature_dim": 4704,
+  "token_normalization": "vigidroid",
+  "label_encoding": {
+    "thesis": "benign=0, malware=1",
+    "paper": "benign=1, malware=0",
+    "note": "Training uses thesis labels; LinRegDroid2 applies paper nearest-class geometry at inference."
+  },
+  "decision_variant": "linregdroid1",
+  "decision_rules": {
+    "linregdroid1": "malware if clamp(linear_score, 0, 1) >= 0.25",
+    "linregdroid2": "malware if |\u0177 - 0| > |\u0177 - 1| in paper label space (mapped to thesis labels)"
+  },
+  "score_output": {
+    "onnx_name": "malware_probability",
+    "transform": "clamp(linear_score, 0, 1)",
+    "paper_note": "Paper reports unbounded \u0177; mobile ONNX uses clamped probability for stable thresholds.",
+    "raw_score_export": false
+  },
+  "ensemble_scope": "out_of_scope",
+  "ensemble_note": "Paper Ensemble-1 (5\u00d7 MLR bootstrap) and Ensemble-2 (MLR+SVM+trees) not implemented; single MLR baseline for thesis comparison.",
+  "inputs": [
+    {
+      "name": "permissions",
+      "shape": [
+        1,
+        4704
+      ],
+      "dtype": "float32",
+      "description": "Binary permission vector aligned with features/permission_vocab.json"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "malware_probability",
+      "shape": [
+        1,
+        1
+      ],
+      "dtype": "float32",
+      "description": "Malware probability in [0, 1] (clamp of linear score)"
+    }
+  ],
+  "onnx_file": "model.onnx",
+  "feature_asset": "features/permission_vocab.json",
+  "android_assets_target": "vigidroid/app/src/main/assets/models/linregdroid_permission/",
+  "val_f1": 0.8516129032258064,
+  "val_accuracy": 0.9096858638743456
+}

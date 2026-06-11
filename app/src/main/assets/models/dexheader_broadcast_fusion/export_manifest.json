@@ -1,0 +1,47 @@
+{
+  "model_id": "dexheader_broadcast_fusion",
+  "domain": "dex_header_receiver_actions",
+  "opset": 14,
+  "inputs": [
+    {
+      "name": "dex_header",
+      "shape": [
+        1,
+        104
+      ],
+      "dtype": "float32"
+    },
+    {
+      "name": "receiver",
+      "shape": [
+        1,
+        70
+      ],
+      "dtype": "float32"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "malware_prob",
+      "dtype": "float32"
+    }
+  ],
+  "preprocessing_version": "eb44039",
+  "multidex_mode": "sum",
+  "feature_extraction": {
+    "apk_parts": [
+      "classes*.dex(header)",
+      "AndroidManifest.xml"
+    ],
+    "fusion": "embedding_concat_then_fc",
+    "branches": [
+      "dex_header_104",
+      "receiver_system_actions"
+    ],
+    "dex_feature_dim": 104,
+    "dex_normalization": "per_byte_div255 -> multidex_sum -> bm1_corpus_minmax",
+    "receiver_size_R": 70,
+    "receiver_embed_dim_dR": 32,
+    "receiver_system_actions_only": true
+  }
+}

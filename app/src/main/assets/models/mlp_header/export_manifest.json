@@ -1,0 +1,48 @@
+{
+  "model_id": "mlp_header",
+  "domain": "dex_header_d3",
+  "exported_at": "2026-06-08T10:13:36.213704+00:00",
+  "opset_version": 14,
+  "checkpoint": "/mnt/Files/thesis_vigidroid/Dex_header_paper_implementation/only_base1_model/artifacts/checkpoints/latest_checkpoint.pth",
+  "feature_dim": 104,
+  "hidden_dim": 128,
+  "preprocessing_version": 2,
+  "multidex_mode": "sum",
+  "multidex_max_dex": 3,
+  "normalization": "features/normalization_header.json",
+  "inputs": [
+    {
+      "name": "features",
+      "shape": [
+        1,
+        104
+      ],
+      "dtype": "float32",
+      "description": "Min-max normalized Dex header vector (post-multidex aggregation)"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "malware_probability",
+      "shape": [
+        1,
+        1
+      ],
+      "dtype": "float32",
+      "description": "Sigmoid malware probability in [0, 1]"
+    }
+  ],
+  "onnx_file": "model.onnx",
+  "android_assets_target": "vigidroid/app/src/main/assets/models/mlp_header/",
+  "onnx_runtime_check": {
+    "input_name": "features",
+    "output_name": "malware_probability",
+    "test_output_shape": [
+      1,
+      1
+    ],
+    "test_output_value": 0.8102356195449829
+  },
+  "val_f1": 0.967741935483871,
+  "val_accuracy": 0.9803664921465969
+}

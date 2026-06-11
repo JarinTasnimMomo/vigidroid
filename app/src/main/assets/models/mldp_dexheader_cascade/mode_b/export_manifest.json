@@ -1,0 +1,95 @@
+{
+  "model_id": "mldp_dexheader_cascade",
+  "mode": "B",
+  "domain": "manifest_mldp_perm_dex_header",
+  "exported_at": "2026-06-08T10:20:59.639312+00:00",
+  "opset": 14,
+  "stage1_checkpoint": "/mnt/Files/thesis_vigidroid/mldp_dexheader_cascade/artifacts/checkpoints/stage1_best.pt",
+  "stage1_head": "tiny_mlp",
+  "stage2_source": "/mnt/Files/thesis_vigidroid/vigidroid/app/src/main/assets/models/mlp_header/model.onnx",
+  "stage2_sha256": "7bb1b97ac4db5c17da581e2aef81f31a90a0c2e85d6ee622a4960f4b0f846b38",
+  "config_hash": "726526be1c144fcf",
+  "preprocessing_version": "eb44039",
+  "multidex_mode": "sum",
+  "feature_extraction": {
+    "apk_parts": [
+      "AndroidManifest.xml",
+      "classes*.dex(header)"
+    ],
+    "fusion": "cascade",
+    "blocks": [
+      "mldp_perms",
+      "dex_header_104"
+    ],
+    "mldp_size_S": 22,
+    "dex_feature_dim": 104,
+    "dex_normalization": "per_byte_div255 -> multidex_sum -> corpus_minmax",
+    "stage2_normalization": "features/normalization_header.json (deployed mlp_header)"
+  },
+  "stage1": {
+    "onnx_file": "stage1_mldp.onnx",
+    "inputs": [
+      {
+        "name": "features",
+        "shape": [
+          1,
+          22
+        ],
+        "dtype": "float32",
+        "description": "MLDP permission binary vector x_S"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "stage1_prob",
+        "shape": [
+          1,
+          1
+        ],
+        "dtype": "float32",
+        "description": "Stage-1 malware probability (sigmoid in ONNX graph)"
+      }
+    ]
+  },
+  "stage2": {
+    "onnx_file": "stage2_mlp_header.onnx",
+    "byte_copy": true,
+    "inputs": [
+      {
+        "name": "features",
+        "shape": [
+          1,
+          104
+        ],
+        "dtype": "float32",
+        "description": "Dex header vector H (deployed mlp_header normalization)"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "malware_probability",
+        "shape": [
+          1,
+          1
+        ],
+        "dtype": "float32",
+        "description": "Stage-2 malware probability from deployed mlp_header"
+      }
+    ]
+  },
+  "android_assets_target": "vigidroid/app/src/main/assets/models/mldp_dexheader_cascade/",
+  "stage1_onnx_runtime_check": {
+    "input_name": "features",
+    "output_name": "stage1_prob",
+    "test_output_shape": [
+      1,
+      1
+    ],
+    "test_output_value": 0.16882267594337463,
+    "onnx_size_bytes": 3744,
+    "onnx_size_kb": 3.66
+  },
+  "stage2_onnx_size_bytes": 126300,
+  "val_f1": 0.8609865470852018,
+  "val_accuracy": 0.918848167539267
+}

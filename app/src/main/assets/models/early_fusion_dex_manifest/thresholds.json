@@ -1,0 +1,19 @@
+{
+  "model_id": "early_fusion_dex_manifest",
+  "default": 0.5,
+  "tuned_val": 0.2,
+  "malware_threshold": 0.2,
+  "cascade_targets": {
+    "target_false_omission_rate": 0.02,
+    "target_false_alarm_at_thigh": 0.02
+  },
+  "cascade": {
+    "t_low": 0.015309738926589489,
+    "t_high": 0.3739590644836426,
+    "val_false_omission_rate_at_t_low": 0.016736401673640166,
+    "val_false_alarm_rate_at_t_high": 0.01904761904761905,
+    "val_step1_exit_rate": 0.7657068062827225
+  },
+  "description": "Predict malware when malware_probability >= tuned_val",
+  "benign_threshold": 0.8
+}

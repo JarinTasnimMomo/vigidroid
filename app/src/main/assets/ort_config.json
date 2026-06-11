@@ -1,0 +1,5 @@
+{
+  "intra_op_num_threads": 4,
+  "optimization_level": "ALL_OPT",
+  "use_nnapi": false
+}

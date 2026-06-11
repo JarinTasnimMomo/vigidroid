@@ -1,0 +1,55 @@
+{
+  "num_samples": 10,
+  "samples": [
+    {
+      "index": 65,
+      "label": 0,
+      "expected_malware_probability": 0.06269029527902603
+    },
+    {
+      "index": 585,
+      "label": 0,
+      "expected_malware_probability": 0.04141844063997269
+    },
+    {
+      "index": 67,
+      "label": 0,
+      "expected_malware_probability": 0.06833742558956146
+    },
+    {
+      "index": 495,
+      "label": 0,
+      "expected_malware_probability": 0.06833742558956146
+    },
+    {
+      "index": 332,
+      "label": 1,
+      "expected_malware_probability": 0.4668741226196289
+    },
+    {
+      "index": 328,
+      "label": 0,
+      "expected_malware_probability": 0.07571341097354889
+    },
+    {
+      "index": 531,
+      "label": 0,
+      "expected_malware_probability": 1.0
+    },
+    {
+      "index": 71,
+      "label": 0,
+      "expected_malware_probability": 0.19370724260807037
+    },
+    {
+      "index": 153,
+      "label": 1,
+      "expected_malware_probability": 0.7848026752471924
+    },
+    {
+      "index": 652,
+      "label": 1,
+      "expected_malware_probability": 0.7334572076797485
+    }
+  ]
+}
